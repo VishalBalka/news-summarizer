@@ -1,17 +1,14 @@
-# preprocess.py
 import spacy
 from typing import Dict, Any, List
 import re
 
-nlp = spacy.load("en_core_web_sm")  # download if not present: python -m spacy download en_core_web_sm
+nlp = spacy.load("en_core_web_sm") 
 
 def clean_text(text: str) -> str:
     """Basic cleaning without removing necessary punctuation for summarization."""
     if not text:
         return ""
-    # normalize whitespace
     text = re.sub(r'\s+', ' ', text).strip()
-    # optionally remove weird unicode control chars
     text = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', text)
     return text
 
