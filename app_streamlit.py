@@ -1,4 +1,3 @@
-# app_streamlit.py
 import streamlit as st
 from fetcher import fetch_article_from_url, fetch_articles_from_rss
 from preprocess import clean_text, extract_entities, split_text_for_model
