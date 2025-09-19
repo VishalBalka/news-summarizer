@@ -1,4 +1,3 @@
-# fetcher.py
 from newspaper import Article
 import feedparser
 from typing import List, Dict
@@ -24,6 +23,5 @@ def fetch_articles_from_rss(rss_url: str, limit: int = 5) -> List[Dict]:
             article = fetch_article_from_url(url)
             items.append({"url": url, "title": article["title"], "text": article["text"]})
         except Exception:
-            # skip items that fail
             continue
     return items
